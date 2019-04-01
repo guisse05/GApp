@@ -1,15 +1,13 @@
 package com.example.gapp.controler;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.gapp.ItemDetailsActivity;
 import com.example.gapp.R;
-import com.example.gapp.model.CarApiRest;
-import com.example.gapp.view.CarItem;
+import com.example.gapp.model.CarItemAdapter;
+import com.example.gapp.model.CarItem;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -21,11 +19,10 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ListCarActivity extends AppCompatActivity {
+public class ListCarActivity extends AppCompatActivity  {
     private RecyclerView shopListView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,24 +54,16 @@ public class ListCarActivity extends AppCompatActivity {
             }
         });
     }
-//get list view
-        private void showList(List<CarItem> listToDisplay) {
 
-            shopListView =  findViewById(R.id.shop_list);
-            layoutManager = new LinearLayoutManager(this);
-            shopListView.setLayoutManager(layoutManager);
-            mAdapter = new CarItemAdapter(this, listToDisplay, new CarItemAdapter.OnItemClickListener() {
-                @Override
-                public void onItemClick(CarItem item) {
+    //get list view
+    private void showList(final List<CarItem> listToDisplay) {
+        shopListView = findViewById(R.id.shop_list);
+        layoutManager = new LinearLayoutManager(this);
+        shopListView.setLayoutManager(layoutManager);
+        mAdapter = new CarItemAdapter(this, listToDisplay);
+        shopListView.setAdapter(mAdapter);
 
-                    Intent intent = new Intent(getApplicationContext(), ItemDetailsActivity.class);
-                    intent.putExtra("itemName",item.getName());
-
-                    startActivity(intent);
+    }
 
 
-                }
-            });
-            shopListView.setAdapter(mAdapter);
-        }
 }

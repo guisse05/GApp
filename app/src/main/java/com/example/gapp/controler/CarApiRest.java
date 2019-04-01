@@ -1,6 +1,6 @@
-package com.example.gapp.model;
+package com.example.gapp.controler;
 
-import com.example.gapp.view.CarItem;
+import com.example.gapp.model.CarItem;
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
