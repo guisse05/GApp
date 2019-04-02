@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/spacer_16"
     android:paddingRight="@dimen/spacer_16"
     android:paddingTop="@dimen/spacer_10"
-    android:background="@color/lightGray"
+
     tools:context=".controler.ListCarActivity">
 
     <android.support.v7.widget.RecyclerView
@@ -28,7 +28,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="9dp"
-        android:background="@color/lightGray"></android.support.v7.widget.RecyclerView>
+        android:background="@color/white"></android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>
 

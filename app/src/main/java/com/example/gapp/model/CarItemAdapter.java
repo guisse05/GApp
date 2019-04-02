@@ -2,6 +2,7 @@ package com.example.gapp.model;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.example.gapp.view.ItemDetailsActivity;
+
 import com.example.gapp.R;
+import com.example.gapp.view.ItemDetailsActivity;
 
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class CarItemAdapter extends RecyclerView.Adapter<CarItemAdapter.ViewHold
     public Context context;
     public List<CarItem> carItemList;
     public LayoutInflater inflater; //injecter chaque elt de la liste
-
+    Bundle bundle=new Bundle();
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -31,13 +33,14 @@ public class CarItemAdapter extends RecyclerView.Adapter<CarItemAdapter.ViewHold
     public TextView itemDescriptionView;
     RelativeLayout layout;
 
+
        public ViewHolder(View v) {
            super(v);
            layout = v.findViewById(R.id.shop_list);
            itemNameView = v.findViewById(R.id.item_name);
            itemPriceView = v.findViewById(R.id.item_price);
            itemIconView = v.findViewById(R.id.item_icon);
-           itemDescriptionView = v.findViewById(R.id.car_description);
+           itemDescriptionView = v.findViewById(R.id.item_description);
 
        }
     }
@@ -85,6 +88,9 @@ public class CarItemAdapter extends RecyclerView.Adapter<CarItemAdapter.ViewHold
         //get icon view
         final String ressourceName = "item_" + tag + "_icon";
         final int resId=context.getResources().getIdentifier(ressourceName,"drawable",context.getPackageName());
+
+
+
         holder.itemIconView.setImageResource(resId);
 
         //get item name view
@@ -92,7 +98,8 @@ public class CarItemAdapter extends RecyclerView.Adapter<CarItemAdapter.ViewHold
 
         //get item description
 
-        //holder.itemDescriptionView.setText(description);
+
+       holder.itemDescriptionView.setText(itemDescription);
 
         //get item price view
         holder.itemPriceView.setText(itemPrice+"$");
@@ -102,7 +109,9 @@ public class CarItemAdapter extends RecyclerView.Adapter<CarItemAdapter.ViewHold
             public void onClick(View v) {
                 Intent intent = new Intent(context, ItemDetailsActivity.class);
                 intent.putExtra("itemName",itemName);
-              //  intent.putExtra("itemDescription",description);
+                intent.putExtra("itemDescription",itemDescription);
+                bundle.putInt("image",resId);
+                intent.putExtras(bundle);
                 context.startActivity(intent);
             }
         });

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GApp</string>
+    <string name="app_name">Rent a Car</string>
     <string name="item_default_name">Nom de l\'article</string>
     <string name="item_default_price">0$</string>
     <string name="description_image">TODO</string>
@@ -8,4 +8,6 @@
     <string name="description">TO DO</string>
     <string name="merci">Merci</string>
     <string name="ma_description">ma description</string>
+    <string name="mon_text" />
+    <string name="text_test">text test</string>
 </resources>
