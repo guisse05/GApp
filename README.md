@@ -8,7 +8,10 @@
  
 # Tried
 
-<img src="mvc" width="350" title="hover text">
+<img src="https://github.com/guisse05/GApp/blob/guisse05-patch-2/mvc.PNG" width="75" >
+
+
+
 
 # Rendu de l'application
 
