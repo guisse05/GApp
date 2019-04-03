@@ -16,14 +16,6 @@
 
 
 
-
-
-
-
-
-
-
-
 # Rendu de l'application
 
 Page d'accueil 
@@ -60,5 +52,16 @@ la voiture que vous avez choisi.
 
 
 
+# Critères
 
-  
+--> Animation entre écrans 2 points (bruit de pneu voiture avec mediaplayer)   ok
+
+--> Gitflow (branches , pull request , merge...)                               ok
+
+--> Appel WebService à une API Rest                                            ok
+
+--> 3 activity (acceuil , list , details)                                      ok
+
+--> RecyclerView(rempli par un inflater qui prend les données de l'API et les adapte à l'affichage voulu) ok
+
+--> Readme ("que vous lisez actuellement ;)" )                                 ok
